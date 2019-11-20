@@ -1,7 +1,7 @@
 package com.company;
 
 public class Moves {
-    AI ai = new AI();
+
     boolean player;
 
 
