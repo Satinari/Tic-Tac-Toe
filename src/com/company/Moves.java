@@ -1,17 +1,30 @@
 package com.company;
 
 public class Moves {
+    AI ai = new AI();
     boolean player;
 
 
-    public void makeSomeMoves (int choice, char[] v){
+    public void makeSomeMoves(int choice, char[] v) {
 
-        player = !player;
         choice -= 1;
-        if (player == true){
-            v[choice] = 'X';
+
+        if (v[choice] == '_') {
+            if (player == true) {
+                v[choice] = 'X';
+            } else {
+                v[choice] = 'O';
+            }
+        } else if (player == true) {
+            System.out.println("Выбери другую ячейку :)");
         } else {
-            v[choice] = 'O';
+
         }
     }
+
+
+    public void changeMove(){
+        player = !player;
+    }
+
 }
