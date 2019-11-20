@@ -1,11 +1,8 @@
 package com.company;
 
-public class Field {
-    int i;
-    char[] v = new char[9];
+public class Field{
 
-
-    public void display(){
+    public void display(char[] v){
 
         System.out.println("|_" + v[0] + "_|" +
                             "_" + v[1] + "_|" +
@@ -19,10 +16,9 @@ public class Field {
 
     }
 
-    public void clear(){
-        for ( i = 0; i < 9; i++) {
+    public void clear(char[] v){
+        for (int i = 0; i < 9; i++) {
             v[i] = '_';
         }
-
     }
 }
