@@ -1,7 +1,7 @@
 package com.company;
 
 public class Field {
-
+    int i;
     char[] v = new char[9];
 
 
@@ -19,9 +19,10 @@ public class Field {
 
     }
 
-    public void amountOfNumbers(){
-        for (int i = 0; i < 9; i++) {
+    public void clear(){
+        for ( i = 0; i < 9; i++) {
             v[i] = '_';
         }
+
     }
 }

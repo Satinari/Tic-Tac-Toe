@@ -2,14 +2,17 @@ package com.company;
 
 import java.util.Scanner;
 
-public class User {
+public class User extends Field{
 
-    public void text() {
+    public void show() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Выберете ячейку 1-9 ");
-        int number = scanner.nextInt();
+        Field field = new Field();
+        field.clear();
 
-        System.out.println(number);
+        field.i = scanner.nextInt();
+        System.out.println(v[i] = 'X');
+
 
     }
 }
