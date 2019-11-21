@@ -1,9 +1,10 @@
 package com.company;
 
+import java.util.Random;
+
 public class Moves {
 
     boolean player;
-
 
     public void makeSomeMoves(int choice, char[] v) {
 
@@ -18,10 +19,13 @@ public class Moves {
         } else if (player == true) {
             System.out.println("Выбери другую ячейку :)");
         } else {
-
+            while (v[choice] != '_'){
+                Random rnd = new Random(System.currentTimeMillis());
+                choice = rnd.nextInt(8);
+            }
+            v[choice] = 'O';
         }
     }
-
 
     public void changeMove(){
         player = !player;

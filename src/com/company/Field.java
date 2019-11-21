@@ -13,7 +13,6 @@ public class Field{
                            "|_" + v[6] + "_|" +
                             "_" + v[7] + "_|" +
                             "_" + v[8] + "_|\n" );
-
     }
 
     public void clear(char[] v){
