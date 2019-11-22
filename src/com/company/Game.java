@@ -3,6 +3,7 @@ package com.company;
 public class Game {
     char[][] array = new char[3][3];
 
+    //Starts game
     public void Start (){
         Display display = new Display();
         Moves moves = new Moves();
