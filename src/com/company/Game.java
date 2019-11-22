@@ -1,7 +1,7 @@
 package com.company;
 
 public class Game {
-    char[] v = new char[9];
+    char[][] v = new char[3][3];
 
     public void Start () {
 

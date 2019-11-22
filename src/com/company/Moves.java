@@ -4,23 +4,22 @@ import java.util.Random;
 
 public class Moves {
 
-    boolean player;
-
-    public void makeSomeMoves(int choice, char[] v) {
+    boolean isPlayerMove;
+    Random rnd  = new Random();
+    public void makeSomeMoves(int choice, char[] v) { //fixme change  var name
 
         choice -= 1;
 
-        if (v[choice] == '_') {
-            if (player == true) {
-                v[choice] = 'X';
+        if (v[choice] == '_') { //fixme make constants
+            if (isPlayerMove) {
+                v[choice] = 'X'; //fixme make constants
             } else {
-                v[choice] = 'O';
+                v[choice] = 'O';//fixme make constants
             }
-        } else if (player == true) {
+        } else if (isPlayerMove) {
             System.out.println("Выбери другую ячейку :)");
         } else {
             while (v[choice] != '_'){
-                Random rnd = new Random(System.currentTimeMillis());
                 choice = rnd.nextInt(8);
             }
             v[choice] = 'O';
@@ -28,7 +27,7 @@ public class Moves {
     }
 
     public void changeMove(){
-        player = !player;
+        isPlayerMove = !isPlayerMove;
     }
 
 }
