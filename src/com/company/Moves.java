@@ -4,8 +4,8 @@ import java.util.Random;
 public class Moves {
     Random rnd = new Random();
     private final char empty = '_';
-    private final char x = 'X';
-    private final char o = 'O';
+    char x = 'X';
+    char o = 'O';
     private boolean isPlayerMove;
     User user = new User();
 
@@ -72,5 +72,4 @@ public class Moves {
     public void changeMove(){
         isPlayerMove = !isPlayerMove;
     }
-
 }
