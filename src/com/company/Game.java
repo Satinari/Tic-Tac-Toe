@@ -1,26 +1,25 @@
 package com.company;
 
 public class Game {
-    char[][] v = new char[3][3];
+    char[][] array = new char[3][3];
 
-    public void Start () {
-
-        Field field = new Field();
+    public void Start (){
+        Display display = new Display();
         Moves moves = new Moves();
         User user = new User();
         AI ai = new AI();
 
-        field.clear(v);
-        field.display(v);
+        display.clearArray(array);
+        display.structureOfArray(array);
 
         while (true){
             moves.changeMove();
-            moves.makeSomeMoves(user.show(), v);
-            field.display(v);
-            System.out.println("Кампухтер ходит:");
+            moves.makeSomeMove(user.receiveValueFromUser(), array);
+            display.structureOfArray(array);
+            System.out.println("Кампухтер ходит");
             moves.changeMove();
-            moves.makeSomeMoves(ai.showAi(), v);
-            field.display(v);
+            moves.makeSomeMove(ai.showAi(), array);
+            display.structureOfArray(array);
         }
     }
 }
