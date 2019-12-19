@@ -16,8 +16,8 @@ public class GameState {
                 else {
                     System.out.println(lose);
                 }
+                System.exit(0);
             }
-            System.exit(0);
         }
 
         for (int i = 0; i < 3; i++) {
@@ -28,8 +28,8 @@ public class GameState {
                 else {
                     System.out.println(lose);
                 }
+                System.exit(0);
             }
-            System.exit(0);
         }
 
         if ((array[0][0] == value && array[1][1]  == value && array[2][2] == value) ||
