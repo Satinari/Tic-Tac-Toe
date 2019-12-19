@@ -16,14 +16,14 @@ public class Game {
 
         while (true){
             moves.changeMove();
-            gameState.stateOfGame(moves.x, array);
             moves.makeSomeMove(user.receiveValueFromUser(), array);
             display.drawGamesField(array);
+            gameState.stateOfGame(moves.x, array);
             System.out.println("Кампухтер ходит");
             moves.changeMove();
-            gameState.stateOfGame(moves.o, array);
             moves.makeSomeMove(ai.showAi(), array);
             display.drawGamesField(array);
+            gameState.stateOfGame(moves.o, array);
         }
     }
 }

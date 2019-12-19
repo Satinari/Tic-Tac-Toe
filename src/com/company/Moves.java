@@ -8,6 +8,8 @@ public class Moves {
     char o = 'O';
     private boolean isPlayerMove;
     User user = new User();
+    int choiceX;
+    int choiceY;
 
     //Choice value for array
     public void makeSomeMove(int choice, char[][] array) {
@@ -19,15 +21,10 @@ public class Moves {
                 else array[0][choice - 1] = o;
             }
             else if (isPlayerMove) {
-                System.out.println("Выберите другое число");
-                user.receiveValueFromUser();
-                changeMove();
+                repeatPlayerMove();
             }
             else {
-                while (array[0][choice - 1] != empty){
-                    choice = 1 + rnd.nextInt(3);
-                }
-                array[0][choice - 1] = o;
+                repeatAiMove(array);
             }
         }
 
@@ -37,15 +34,10 @@ public class Moves {
                 if (isPlayerMove) array[1][choice - 4] = x;
                 else array[1][choice - 4] = o;
             } else if (isPlayerMove) {
-                System.out.println("Выберите другое число");
-                user.receiveValueFromUser();
-                changeMove();
+                repeatPlayerMove();
             }
             else {
-                while (array[1][choice - 4] != empty){
-                    choice = 4 + rnd.nextInt(3);
-                }
-                array[1][choice - 4] = o;
+                repeatAiMove(array);
             }
         }
 
@@ -55,15 +47,10 @@ public class Moves {
                 if (isPlayerMove) array[2][choice - 7] = x;
                 else array[2][choice - 7] = o;
             } else if (isPlayerMove) {
-                System.out.println("Выберите другое число");
-                user.receiveValueFromUser();
-                changeMove();
+                repeatPlayerMove();
             }
             else {
-                while (array[2][choice - 7] != empty){
-                    choice = 7 + rnd.nextInt(3);
-                }
-                array[2][choice - 7] = o;
+                repeatAiMove(array);
             }
         }
     }
@@ -72,4 +59,20 @@ public class Moves {
     public void changeMove(){
         isPlayerMove = !isPlayerMove;
     }
+
+    public void repeatAiMove(char array[][]){
+        do {
+            choiceX = rnd.nextInt(3);
+            choiceY = rnd.nextInt(3);
+        }
+        while (array[choiceX][choiceY] != empty);
+        array[choiceX][choiceY] = o;
+    }
+
+    public void repeatPlayerMove(){
+        System.out.println("Выберите другое число");
+        user.receiveValueFromUser();
+        changeMove();
+    }
 }
+
